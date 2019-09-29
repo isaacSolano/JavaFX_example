@@ -1,0 +1,29 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<GridPane fx:controller="com.JavaFX.UI.UIController"
+          stylesheets="/com/JavaFX/UI/UI.css"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <!--    start creating com.JavaFX.UI elements-->
+
+    <Label GridPane.rowIndex="1" text="Ingrese su nombre" />
+    <TextField GridPane.rowIndex="2" fx:id="inputNombre" />
+
+    <Label GridPane.rowIndex="3" text="Ingrese su apellido" />
+    <TextField GridPane.rowIndex="4" fx:id="inputApellido" />
+
+    <Button text="Registrar" onAction="#registrarUsuario" GridPane.rowIndex="5" />
+    <Label GridPane.rowIndex="6" fx:id="outputEstado" />
+
+    <Button text="Listar Usuarios" onAction="#listarUsuarios" GridPane.rowIndex="7" />
+
+    <Pane fx:id="panelUsuarios" GridPane.rowIndex="8">
+
+    </Pane>
+    <!--    finish creating com.JavaFX.UI elements-->
+</GridPane>
