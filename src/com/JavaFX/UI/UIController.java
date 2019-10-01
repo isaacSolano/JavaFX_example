@@ -3,7 +3,8 @@ package com.JavaFX.UI;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.GridPane;
+
 
 import java.util.ArrayList;
 
@@ -11,11 +12,9 @@ import com.JavaFX.TL.Controller;
 
 public class UIController {
     public Label outputEstado;
-
     public TextField inputNombre;
     public TextField inputApellido;
-
-    public Pane panelUsuarios;
+    public GridPane panelUsuarios;
 
     Controller gestor = new Controller();
 
@@ -30,13 +29,13 @@ public class UIController {
 
     public void listarUsuarios(ActionEvent actionEvent){
         ArrayList<String> listaUsuarios = gestor.obtenerUsuarios();
+        int index = 1;
+
+        panelUsuarios.add(new Label("<-- Informacion de usuarios -->"), 1, 0);
 
         for(String usuario : listaUsuarios){
-            Label infoUsuario = new Label(usuario);
+            panelUsuarios.add(new Label(usuario), 1, index++);
 
-            infoUsuario.
-
-            panelUsuarios.getChildren().add(infoUsuario);
             System.out.println(usuario);
         }
     }
